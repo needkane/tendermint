@@ -60,12 +60,12 @@ func (valSet *ValidatorSet) IncrementAccum(times int) {
 	// Decrement the validator with most accum times times
 	for i := 0; i < times; i++ {
 		mostest := validatorsHeap.Peek().(*Validator)
-		if i == times-1 {
-			valSet.LastProposer = mostest
-		}
+		/*if i == times-1 {
+		}*/
 		mostest.Accum -= int64(valSet.TotalVotingPower())
 		validatorsHeap.Update(mostest, accumComparable{mostest})
 	}
+	valSet.LastProposer = validatorsHeap.Peek().(*Validator)
 }
 
 func (valSet *ValidatorSet) Copy() *ValidatorSet {
