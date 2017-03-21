@@ -3,13 +3,12 @@ package main
 import (
 	"fmt"
 
-	"github.com/tendermint/go-wire"
+	data "github.com/tendermint/go-data"
 	"github.com/tendermint/tendermint/types"
 )
 
 func gen_validator() {
 	privValidator := types.GenPrivValidator()
-	privValidatorJSONBytes := wire.JSONBytesPretty(privValidator)
-	fmt.Printf(`%v
-`, string(privValidatorJSONBytes))
+	privValidatorJSONBytes, _ := data.ToJSON(privValidator)
+	fmt.Println(string(privValidatorJSONBytes))
 }
