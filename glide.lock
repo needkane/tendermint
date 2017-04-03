@@ -115,7 +115,7 @@ imports:
   - server
   - types
 - name: github.com/tendermint/go-wire
-  version: f530b7af7a8b06e612c2063bff6ace49060a085e
+  version: 328b2bb128def20c9a636e336c18ba8b7426ebea
 - name: github.com/tendermint/log15
   version: ae0f3d6450da9eac7074b439c8e1c3cabf0d5ce6
   subpackages:
